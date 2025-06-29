@@ -1,0 +1,24 @@
+# Ignore cache directories and files
+__pycache__/
+*.py[cod]
+*$py.class
+.cache/
+cache/
+*.cache
+
+# Node.js cache
+node_modules/
+.npm/
+
+# Other common cache locations
+.eslintcache
+.sass-cache/
+.webpack/
+
+# Environment and local settings
+.env
+.venv
+env/
+venv/
+ENV/
+.local/
