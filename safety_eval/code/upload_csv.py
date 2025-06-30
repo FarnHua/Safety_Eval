@@ -51,24 +51,24 @@ def upload_csv_to_gsheets(
     print(f"✓ Uploaded '{csv_path}' into '{worksheet_name}' of your Google Sheet.")
 
 if __name__ == "__main__":
-
+    main()
     ## Upload CSV files to Google Sheets
     ## You can change the paths and URLs as needed.
     ## You also need to have credentials set up for Google Sheets API.
     
-    upload_csv_to_gsheets(
-        csv_path="../advbench_wildguard_eval/advbench.csv",
-        spreadsheet_url="",
-        credentials_file=""
-        worksheet_name="advbench_WildGuard",
-        start_cell="A1"
-    )
+    # upload_csv_to_gsheets(
+    #     csv_path="../advbench_wildguard_eval/advbench.csv",
+    #     spreadsheet_url="",
+    #     credentials_file=""
+    #     worksheet_name="advbench_WildGuard",
+    #     start_cell="A1"
+    # )
 
-    upload_csv_to_gsheets(
-        csv_path="../hex-phi_wildguard_eval/hex-phi.csv",
-        spreadsheet_url="",
-        credentials_file="",
-        worksheet_name="hex-phi_WildGuard",
-        start_cell="A1"
-    )
+    # upload_csv_to_gsheets(
+    #     csv_path="../hex-phi_wildguard_eval/hex-phi.csv",
+    #     spreadsheet_url="",
+    #     credentials_file="",
+    #     worksheet_name="hex-phi_WildGuard",
+    #     start_cell="A1"
+    # )
     

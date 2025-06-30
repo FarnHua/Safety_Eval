@@ -126,27 +126,6 @@ if [ "$RUN_ORIGINAL_FT" = true ]; then
     done
 fi
 
-################################### for model stock ####################################
-if [ "$RUN_MODEL_STOCK" = true ]; then
-    echo "Starting model stock evaluation..."
-    
-    for t in "${tasks[@]}"; do
-        ckpt=($(get_checkpoints "$t"))
-        
-        for n in "${base_models[@]}"; do
-            for c in "${ckpt[@]}"; do
-                model_path="/livingrooms/farnhua/mergekit/merged_models/${n}_${t}_ckpt-${c}_average-modelStock"
-                model_name="${n}_${t}_ckpt-${c}_average-modelStock"
-                
-                if [[ "$n" =~ ^gemma ]]; then
-                    run_evaluation "$model_path" "$model_name" false false
-                else
-                    run_evaluation "$model_path" "$model_name" false true
-                fi
-            done
-        done
-    done
-fi
 
 ################################### for base model ####################################
 if [ "$RUN_BASE_MODEL" = true ]; then
