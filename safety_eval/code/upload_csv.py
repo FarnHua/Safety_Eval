@@ -50,8 +50,8 @@ def upload_csv_to_gsheets(
 
     print(f"✓ Uploaded '{csv_path}' into '{worksheet_name}' of your Google Sheet.")
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
     ## Upload CSV files to Google Sheets
     ## You can change the paths and URLs as needed.
     ## You also need to have credentials set up for Google Sheets API.
