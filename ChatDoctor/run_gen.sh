@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 source /home/farnhua/.bashrc
-mamba activate vllm_env
+mamba activate safety_eval
 
 export PYTHONWARNINGS="ignore::FutureWarning"
 # export HUGGINGFACE_HUB_CACHE=""

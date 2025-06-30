@@ -32,7 +32,7 @@ RUN_DROPOUT=false
 
 # Environment setup
 source /home/farnhua/.bashrc
-mamba activate vllm_env
+mamba activate safety_eval
 
 export PYTHONWARNINGS="ignore::FutureWarning"
 ## set your huggingface cache directory

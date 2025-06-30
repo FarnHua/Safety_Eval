@@ -35,7 +35,7 @@ model_name=()
 
 # Environment setup
 source /home/farnhua/.bashrc
-mamba activate vllm_env
+mamba activate safety_eval
 export NCCL_P2P_DISABLE=1
 export NCCL_IB_DISABLE=1
 export PYTHONWARNINGS="ignore::FutureWarning"
