@@ -32,8 +32,8 @@ You can also use your own custom fine-tuning or merging methods and integrate th
 
 1. Create and activate the evaluation environment:
 ```bash
-conda env create -f environment.yml
-conda activate safety_eval
+mamba env create -f environment.yml
+mamba activate safety_eval
 ```
 
 2. Set required environment variables:
@@ -45,14 +45,43 @@ export NCCL_IB_DISABLE=1
 export VLLM_ALLOW_LONG_MAX_MODEL_LEN=1
 ```
 
+3. **Important**: For model training, clone LLaMA-Factory and set it up:
+```bash
+# Clone LLaMA-Factory
+git clone https://github.com/hiyouga/LLaMA-Factory.git
+
+# Copy the training configuration files from Safety_Eval to LLaMA-Factory
+cp /livingrooms/farnhua/Safety_Eval/train/*.yaml LLaMA-Factory/
+cp /livingrooms/farnhua/Safety_Eval/train/update_yaml.py LLaMA-Factory/
+cp /livingrooms/farnhua/Safety_Eval/train/run.sh LLaMA-Factory/
+
+# Create a separate conda environment for LLaMA-Factory
+conda create -n llama_factory python=3.10
+conda activate llama_factory
+
+# Install LLaMA-Factory dependencies
+cd LLaMA-Factory
+pip install -e .
+```
+
 ## Directory Structure
 
 - `safety_eval/`: Scripts for safety evaluations (AdvBench, HEx-PHI)
 - `MagicCoder/`: Scripts for code generation evaluation (HumanEval)
 - `ChatDoctor/`: Scripts for medical conversation evaluation
 - `openfunction/`: Scripts for function generation evaluation
+- `train/`: Configuration files for training models using LLaMA-Factory
 
 ## Running Evaluations
+
+### Training Models with LLaMA-Factory
+
+```bash
+cd LLaMA-Factory
+bash run.sh
+```
+
+You can customize the training process by modifying the parameters in `run.sh` or directly editing the YAML configuration files.
 
 ### Safety Evaluation (AdvBench, HEx-PHI)
 
